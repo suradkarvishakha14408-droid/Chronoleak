@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chronoleak</title>
+    <meta charset="UTF-8">
+    <title>Chronoleak Web App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>Chronoleak Web App</h1>
     </header>
 
     <main>
+        <!-- Timer Section -->
         <section id="timer-section">
             <h2>Timer</h2>
             <p id="timer">00:00:00</p>
@@ -18,15 +21,20 @@
             <button id="reset-btn">Reset</button>
         </section>
 
+        <!-- Leak Detection Section -->
         <section id="leak-section">
             <h2>Leak Detection</h2>
             <button id="detect-btn">Detect Leak</button>
             <p id="leak-status">No leak detected</p>
             <ul id="leak-log"></ul>
 
+            <h2>Leak Analytics</h2>
+            <canvas id="leak-chart" width="400" height="200"></canvas>
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
