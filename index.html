@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chronoleak</title>
+    <title>Chronoleak</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Chronoleak Web App</h1>
-  <script src="script.js"></script>
+    <header>
+        <h1>Chronoleak Web App</h1>
+    </header>
+
+    <main>
+        <section id="timer-section">
+            <h2>Timer</h2>
+            <p id="timer">00:00:00</p>
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="reset-btn">Reset</button>
+        </section>
+
+        <section id="leak-section">
+            <h2>Leak Detection</h2>
+            <button id="detect-btn">Detect Leak</button>
+            <p id="leak-status">No leak detected</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
