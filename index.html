@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Chronoleak Web App</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>ChronoLeak</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <header>
-        <h1>Chronoleak Web App</h1>
-    </header>
+<div class="container">
 
-    <main>
-        <!-- Timer Section -->
-        <section id="timer-section">
-            <h2>Timer</h2>
-            <p id="timer">00:00:00</p>
-            <button id="start-btn">Start</button>
-            <button id="stop-btn">Stop</button>
-            <button id="reset-btn">Reset</button>
-        </section>
+<h1>ChronoLeak</h1>
+<p class="tagline">Track Your Time — Stop Your Leaks</p>
 
-        <!-- Leak Detection Section -->
-        <section id="leak-section">
-            <h2>Leak Detection</h2>
-            <button id="detect-btn">Detect Leak</button>
-            <p id="leak-status">No leak detected</p>
-            <ul id="leak-log"></ul>
+<!-- TIMER -->
+<div class="timer-box">
+    <h2 id="timer">00:00</h2>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+</div>
 
-            <h2>Leak Analytics</h2>
-            <canvas id="leak-chart" width="400" height="200"></canvas>
-        </section>
-    </main>
+<!-- CHARTS -->
+<div class="charts">
+    <div class="chart-card">
+        <h3>Leak Trend (Line Chart)</h3>
+        <canvas id="lineChart"></canvas>
+    </div>
+    <div class="chart-card">
+        <h3>Leak Distribution (Pie)</h3>
+        <canvas id="pieChart"></canvas>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+<!-- WEEKLY REPORT -->
+<section class="weekly">
+<h2>Weekly Report</h2>
+<p id="weeklyReport">No data yet...</p>
+</section>
+
+<!-- AI INSIGHTS -->
+<section class="insights">
+<h2>AI Insights</h2>
+<div id="insight-list">
+<p>Waiting for data...</p>
+</div>
+</section>
+
+<!-- PRODUCTIVITY SCORE -->
+<section class="score">
+<h2>Productivity Score</h2>
+<h1 id="scoreValue">--</h1>
+<p id="scoreMessage">Work and stop wasting time 😤</p>
+</section>
+
+<!-- FOCUS MODE -->
+<section class="focus-mode">
+<h2>Focus Mode</h2>
+<button onclick="startFocus()">Enable Focus Mode</button>
+<button onclick="stopFocus()">Disable Focus Mode</button>
+<p id="focusStatus">Focus Mode is OFF</p>
+</section>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
