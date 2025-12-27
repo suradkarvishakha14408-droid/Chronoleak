@@ -1,69 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ChronoLeak</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <title>ChronoLeak</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <h1>ChronoLeak ⏳</h1>
+    <p>Track your time. Catch your leaks. Improve focus.</p>
+</header>
 
-<h1>ChronoLeak</h1>
-<p class="tagline">Track Your Time — Stop Your Leaks</p>
+<section class="timer-box">
+    <h2>Focus Timer</h2>
+    <div class="time-display" id="timer">00:00</div>
 
-<!-- TIMER -->
-<div class="timer-box">
-    <h2 id="timer">00:00</h2>
-    <button onclick="startTimer()">Start</button>
-    <button onclick="stopTimer()">Stop</button>
-    <button onclick="resetTimer()">Reset</button>
-</div>
-
-<!-- CHARTS -->
-<div class="charts">
-    <div class="chart-card">
-        <h3>Leak Trend (Line Chart)</h3>
-        <canvas id="lineChart"></canvas>
+    <div class="btns">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
     </div>
+
+    <p id="leakStatus" class="leak-text">No leaks detected yet</p>
+</section>
+
+<section class="charts">
     <div class="chart-card">
-        <h3>Leak Distribution (Pie)</h3>
+        <h2>Leak Trend</h2>
+        <canvas id="leakChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h2>Time Distribution</h2>
         <canvas id="pieChart"></canvas>
     </div>
-</div>
-
-<!-- WEEKLY REPORT -->
-<section class="weekly">
-<h2>Weekly Report</h2>
-<p id="weeklyReport">No data yet...</p>
 </section>
 
-<!-- AI INSIGHTS -->
-<section class="insights">
-<h2>AI Insights</h2>
-<div id="insight-list">
-<p>Waiting for data...</p>
-</div>
-</section>
+<section class="analytics">
+    <h2>Weekly Report</h2>
+    <p id="weeklyReport">Collecting data… use the app for a while 😊</p>
 
-<!-- PRODUCTIVITY SCORE -->
-<section class="score">
-<h2>Productivity Score</h2>
-<h1 id="scoreValue">--</h1>
-<p id="scoreMessage">Work and stop wasting time 😤</p>
+    <h2>AI Insights</h2>
+    <p id="aiInsights">Waiting for enough data…</p>
 </section>
-
-<!-- FOCUS MODE -->
-<section class="focus-mode">
-<h2>Focus Mode</h2>
-<button onclick="startFocus()">Enable Focus Mode</button>
-<button onclick="stopFocus()">Disable Focus Mode</button>
-<p id="focusStatus">Focus Mode is OFF</p>
-</section>
-
-</div>
 
 <script src="script.js"></script>
 
