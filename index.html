@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ChronoLeak - Focus & Leak Detector</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="background"></div>
+
+<h1 class="title">ChronoLeak ⏳</h1>
+<p class="tag">Track Focus • Detect Leaks • Earn Rewards 💙</p>
+
+<div class="container">
+
+  <!-- TIMER -->
+  <div class="card timer">
+    <h2>Focus Timer</h2>
+    <div class="circular-timer">
+      <svg width="120" height="120">
+        <circle cx="60" cy="60" r="50" stroke="#0b4dd8" stroke-width="8" fill="none" />
+        <circle id="timerRing" cx="60" cy="60" r="50" stroke="#4caf50" stroke-width="8" fill="none" stroke-dasharray="314" stroke-dashoffset="314" />
+      </svg>
+      <h1 id="timerDisplay">00:00</h1>
+    </div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+
+  <!-- FOCUS MODE -->
+  <div class="card focus">
+    <h2>Focus Mode 🔒</h2>
+    <button id="focusModeBtn" class="focusBtn">Enable Focus Mode</button>
+  </div>
+
+  <!-- LIVE STATS -->
+  <div class="card stats">
+    <h2>Live Productivity</h2>
+    <p><strong>Focused Minutes:</strong> <span id="focusedMinutes">0</span></p>
+    <p><strong>Total Leaks Detected:</strong> <span id="leakCount">0</span></p>
+    <p><strong>Productivity Score:</strong> <span id="score">100</span>/100</p>
+  </div>
+
+  <!-- COINS & ACHIEVEMENTS -->
+  <div class="card coins">
+    <h2>💰 Coins & Achievements</h2>
+    <p>Coins: <span id="coins">0</span></p>
+    <p>Achievements: <span id="achievements">None yet</span></p>
+  </div>
+
+  <!-- LINE CHART -->
+  <div class="card lineChart">
+    <h2>Leak Trend (Wave)</h2>
+    <canvas id="leakChart"></canvas>
+  </div>
+
+  <!-- PIE CHART -->
+  <div class="card pieChart">
+    <h2>Activity Breakdown 📊</h2>
+    <canvas id="pieChart"></canvas>
+  </div>
+
+  <!-- WEEKLY REPORT -->
+  <div class="card report">
+    <h2>Weekly Report 📅</h2>
+    <p id="weeklyReport">Focus more to generate weekly insights...</p>
+  </div>
+
+</div>
+
+<!-- SOUNDS -->
+<audio id="leakSound" src="https://assets.mixkit.co/sfx/preview/mixkit-soft-bell-ring-1111.mp3"></audio>
+<audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"></audio>
+<audio id="focusSound" src="https://assets.mixkit.co/sfx/preview/mixkit-positive-notification-951.mp3"></audio>
+
+<!-- FOCUS MODE OVERLAY -->
+<div id="focusOverlay">
+   <div class="focusBox">
+       <h2>Focus Mode Active 🔥</h2>
+       <p>Stay strong. Beat distractions. Build discipline 💙</p>
+       <button id="exitFocusBtn">I Stayed Strong 💪</button>
+   </div>
+</div>
+
+<!-- Coin and Confetti Containers -->
+<div id="coinContainer"></div>
+<div id="confettiContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
